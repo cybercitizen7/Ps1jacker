@@ -89,9 +89,10 @@ function Execute-COM-Hijack {
 def gen_custom( clsidAbuse, clsidFake, filePath):
     print("------------------- GENERATING CUSTOM COM HIJACK PAYLOAD -------------------")
     print("\n\nDESCRIPTION:")
-    print("""This payload will contain your own CLSID to Hijack. Please note that you cannot hijack just any process. I recommend using Procmon to determine which CLSID to go for.
+    print("""This payload will contain your own CLSID to Hijack, your own Fake CLSID and your own script for SCT.
+Please note that you cannot hijack just any process. I recommend using Procmon to determine which CLSID to go for.
 Be sure to filter Procmon so you get only NAME NOT FOUND (result) and TREATAS (at the end of the path). I strongly recommend filtering by HKCU as any other
-will require escalatoin of priviliges.
+will require escalation of priviliges.
 The file path to your SCT may contain a file path on victims machine or on your web server HTTP.""")
 
     print("\n\nCODE EXECUTION:")
@@ -189,7 +190,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
