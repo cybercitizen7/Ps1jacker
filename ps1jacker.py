@@ -14,9 +14,7 @@ def gen_header():
 |/       \_______)\____/(____/   |/     \|(_______/|_/    \/(_______/|/   \__/
 
 
-------------------- Ps1jacker version ALPHA -------------------
-
-!! I DO NOT RECOMMEND USING THIS VERSION AS IT IS STILL IN DEVELOPMENT !!
+------------------- Ps1jacker version v1.0.0 -------------------
 
 Created by: David "darkw1z" Kasabji
 Twitter: @davidkasabji
@@ -25,7 +23,7 @@ Date Created: 11.08.2018
 Ps1jacker is a tool that generates a PowerShell payload for COM Hijacking.
 DISCLAIMER: Please do not abuse this tool for illegal activities.
 
-For more information type ps1jacker.py -h
+For more information type ps1jacker.py -h or ps1jacker.py -i
     """)
 
 def gen_default():
