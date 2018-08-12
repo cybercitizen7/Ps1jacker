@@ -1,5 +1,8 @@
 # Ps1jacker
 Ps1jacker is a tool for generating COM Hijacking payload.
+
+**WARNING: This tool is still in heavy development - testing of CUSTOM and DEFAULT methods are ongoing!**
+
 ######  WHAT IS COM HIJACKING?
 COM Hijacking is a method for an attacker to gain remote code execution or persistence on victims machine, by using legitimate Windows process'. 
 The advantage of Ps1jacker is that it uses a method which allows the user to specify his/her script path on Web Server, which means there is no local
@@ -24,7 +27,6 @@ script.
 ######  DISCLAIMER: 
 Please do not use this tool for illegal activities. This tools should be used by pentesters to ease the generation of payload for COM Hijacking technique.
 
-## WARNING: This tool is still in heavy development - only one functionality is currently in testing!
 
 ######  TEST 1:
 This will generate a default payload that will open Calculator instead of MSPAINT. Be sure to have calc.SCT file from Examples folder within C:\tools\COM Testing\ on victim machine. Otherwise this method wont work.
