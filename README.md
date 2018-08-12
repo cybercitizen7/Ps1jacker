@@ -1,5 +1,6 @@
 # Ps1jacker
 Ps1jacker is a tool for generating COM Hijacking payload.
+COM Hijacking is a method of getting Remote Code Execution by using legitimiate Windows process'. For example, when you start MSPAINT.exe it will trigger several registry keys / directories in your registry. These are specified by CLSID (ClassID). Some of these CLSID do not even exist on your machine, which opens up an opportunity for attacker. The attacker will find that unique non-existing CLSID and hijack it, by adding it to Registry and trigger his/her own script once that CLSID is called by MSPAINT.exe. 
 
 ## WARNING: This tool is still in heavy development - only one functionality is currently in testing!
 
