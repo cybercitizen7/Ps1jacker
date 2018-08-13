@@ -1,7 +1,7 @@
 # Ps1jacker
 Ps1jacker is a tool for generating COM Hijacking payload.
 
-![Ps1jacker screenshot](https://preview.ibb.co/f7vg6U/ps1jacker.png)
+![Ps1jacker screenshot](https://preview.ibb.co/hWmhD9/ps1jacker.png)
 
 **WARNING: This tool is still in development - please report bugs!**
 
