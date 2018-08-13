@@ -1,7 +1,9 @@
 # Ps1jacker
 Ps1jacker is a tool for generating COM Hijacking payload.
 
-**WARNING: This tool is still in heavy development - testing of CUSTOM and DEFAULT methods are ongoing!**
+![Ps1jacker screenshot](https://preview.ibb.co/f7vg6U/ps1jacker.png)
+
+**WARNING: This tool is still in development - please report bugs!**
 
 ######  WHAT IS COM HIJACKING?
 COM Hijacking is a method for an attacker to gain remote code execution or persistence on victims machine, by using legitimate Windows process'. 
