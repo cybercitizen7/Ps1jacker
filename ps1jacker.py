@@ -31,7 +31,7 @@ def gen_default():
     print("\n\nDESCRIPTION:")
     print("""This will create a powershell script which will handle Registry keys for you.
 It must be used with the calc.SCT file which is in /examples directory.
-The calc.SCT file must be located on victims machine under C:\\tools\\COMtest !!
+The calc.SCT file must be located on victims machine under C:\\tools\\COM Testing !!
 When victim executes ps script, the registry will be modified and if the victim opens MSPAINT.exe, it will open Calculator instead.""")
     print("\nWARNING: As we are abusing Windows COM property, which calls on random CLSIDs, it might happen that sometimes our fake CLSID wont get triggered!")
     print("If that is so, just try to open MSPAINT.exe again and it will eventually pop calculator (or multiples!)")
