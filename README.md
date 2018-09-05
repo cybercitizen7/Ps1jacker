@@ -28,6 +28,7 @@ script.
 
 ######  DISCLAIMER: 
 Please do not use this tool for illegal activities. This tools should be used by pentesters to ease the generation of payload for COM Hijacking technique.
+If you intend to use this tool in presentations / demonstrations, please include the developers information.
 
 
 ######  TEST 1:
